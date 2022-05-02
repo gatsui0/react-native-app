@@ -1,0 +1,38 @@
+{   "User": 
+    {
+        "name": "Bryan Christopher",  
+        "LinkPhoto": "./src/icons/fotoDePerfil.jpg" 
+    },
+    "colecoes": [
+        {
+            "nameColecao": "objetos",
+            "id": "1",
+            "descricao": "",
+            "img": "./src/icons/bola.png",
+            "listaCards": [
+                {"verso": "Tree", "frente": "arvore"},
+                {"verso": "table", "frente": "mesa"},
+                {"verso": "book", "frente": "livro"},
+                {"verso": "pencil", "frente": "lápis"}
+            ]
+        },
+        {
+            "nameColecao": "animais",
+            "id": "2",
+            "descricao": "",
+            "img": "./src/icons/animais.png",
+            "listaCards": [
+                {"verso": "monkey", "frente": "macaco"}
+            ]
+        },
+        {
+            "nameColecao": "cores",
+            "id": "3",
+            "descricao": "",
+            "img": "./src/icons/cores.png",
+            "listaCards": [
+                {"verso": "green", "frente": "verde"}
+            ]
+        }
+    ]
+}
