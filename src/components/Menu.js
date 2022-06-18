@@ -4,8 +4,9 @@ import {StyleSheet, Image, View, Text}from 'react-native';
 
 import Play from '../screens/Play';
 import Cartoes from '../screens/Cartoes';
-import Main from '../screens/Main'
-import Login from '../screens/Login'
+import Main from '../screens/Main';
+import Login from '../screens/Login';
+import CriarBaralho from '../screens/CriarBaralho';
 
 const {User} = require('../../user.json');
 const link = User.LinkPhoto;
@@ -47,7 +48,6 @@ export default function Menu (){
     return(
 
         <Drawer.Navigator 
-            initialRouteName="Main" 
             screenOptions={{
                 drawerStyle: {
                     backgroundColor: '#25213E'
@@ -70,6 +70,7 @@ export default function Menu (){
                 options={{
                     drawerIcon: ({focused, size}) => <Image source={require('../icons/barra.png')}/>}}
             />
+            
         </Drawer.Navigator>
     )
 }

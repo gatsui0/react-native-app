@@ -1,10 +1,14 @@
-import React, {Component, useState, useEffect} from 'react';
-import { Text, View, StyleSheet, TextInput, Button, TouchableHighlight, Image, ActivityIndicator} from 'react-native';
-import { initializeApp, firebase } from "firebase/app";
-import { signInWithEmailAndPassword, getAuth } from "firebase/auth";
+import React, { useState, useEffect} from 'react';
+import { Text, View, StyleSheet, TextInput, TouchableHighlight, Image, ActivityIndicator} from 'react-native';
+import { initializeApp } from "firebase/app";
+
+import {connect} from "react-redux";
+import { getDatabase } from "firebase/database";
+
+import {processLogin} from "../actions/";
 
 
-export default function Login(props){
+function Login(props){
 
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
@@ -13,40 +17,16 @@ export default function Login(props){
   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    const firebaseConfig = {
-      apiKey: "AIzaSyD6IPKQ9tDD1FioiIGh8HIw6HPTSHAcZTE",
-      authDomain: "flashcardsapp-1ee16.firebaseapp.com",
-      projectId: "flashcardsapp-1ee16",
-      storageBucket: "flashcardsapp-1ee16.appspot.com",
-      messagingSenderId: "31381622835",
-      appId: "1:31381622835:web:31596d19b9e495cc46d346",
-      measurementId: "G-FR3Y3407SS"
-    };
-    
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
+ 
   });
 
   function MessageShow(){
     switch(message){
       case "auth/invalid-email": return "E-mail invalido!"
       case "auth/wrong-password": return "Senha inválida!"
-      default: return "Erro desconhecido!"
+      default: return message
 
     }
-  }
-
-  function processLogin(){ 
-
-    setLoading(true);
-
-    const auth = getAuth();
-    signInWithEmailAndPassword(auth, email, senha)
-    .then(user => {props.navigation.navigate("Menu"); setMessage("Logado com sucesso!")})
-    .catch(erro => setMessage(erro.code))
-    .then( () => {
-      setLoading(false);
-    })
   }
 
   function renderBottonOrLoading(){
@@ -56,7 +36,7 @@ export default function Login(props){
     }
 
     return(        
-      <TouchableHighlight style={style.button} onPress={() => {processLogin()}}>
+      <TouchableHighlight style={style.button} onPress={() => {props.processLogin(setLoading,setMessage, email, senha, props)}}>
       <Text style={style.txt}>ENTRAR</Text>
       </TouchableHighlight>
       );
@@ -188,3 +168,5 @@ const style = StyleSheet.create({
     marginHorizontal: 140,
   }
 })
+
+export default connect(null, {processLogin})(Login);

@@ -33,6 +33,24 @@
             "listaCards": [
                 {"verso": "green", "frente": "verde"}
             ]
+        },
+        {
+            "nameColecao": "cores",
+            "id": "3",
+            "descricao": "",
+            "img": "./src/icons/cores.png",
+            "listaCards": [
+                {"verso": "green", "frente": "verde"}
+            ]
+        },
+        {
+            "nameColecao": "cores",
+            "id": "3",
+            "descricao": "",
+            "img": "./src/icons/cores.png",
+            "listaCards": [
+                {"verso": "green", "frente": "verde"}
+            ]
         }
     ]
 }
