@@ -1,4 +1,4 @@
-# ScreenShoots
+# Screenshots
 
 <div style="display: flex"> 
 
