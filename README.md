@@ -8,7 +8,6 @@
 <img src="./Screenshots/baralho.png" witdth="100" height="300">
 <img src="./Screenshots/criarbaralho.png" witdth="100" height="300">
 <img src="./Screenshots/flashcards.png" witdth="100" height="300">
-<img src="./Screenshots/login.png" witdth="100" height="300">
 
 </div>
 
